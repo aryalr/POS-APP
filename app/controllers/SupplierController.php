@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Database; // tambahkan ini
+use App\Config\Database; // tambahkan ini
 use Smarty;
 
 class SupplierController

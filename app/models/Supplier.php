@@ -1,7 +1,7 @@
 <?php
 namespace App\Models;
 
-use App\Database;
+use App\Config\Database;
 use PDO;
 
 class Supplier {
