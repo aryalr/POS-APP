@@ -1,37 +1,25 @@
 <?php
-require_once '../config/config.php';
-require_once '../libs/Database.php';
-require_once '../libs/Smarty/Smarty.class.php';
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use App\Controllers\SupplierController;
 
 // Inisialisasi Smarty
-$smarty = new Smarty\Smarty;
-$smarty->setTemplateDir(SMARTY_TEMPLATE_DIR);
-$smarty->setCompileDir(SMARTY_COMPILE_DIR);
+$smarty = new Smarty();
+$smarty->setTemplateDir(__DIR__ . '/../app/views/templates/');
+$smarty->setCompileDir(__DIR__ . '/../app/views/templates_c/');
+$smarty->setCacheDir(__DIR__ . '/../app/views/cache/');
+$smarty->setConfigDir(__DIR__ . '/../app/views/configs/');
 
-// Routing sederhana
-$page = $_GET['page'] ?? 'dashboard';
+// Routing sederhana (sementara)
+$page = $_GET['page'] ?? 'supplier';
 
 switch ($page) {
-    case 'products':
-        require_once '../app/controllers/ProductController.php';
-        $controller = new ProductController($smarty);
+    case 'supplier':
+        $controller = new SupplierController($smarty);
         $controller->index();
         break;
-
-    case 'suppliers':
-        require_once '../app/controllers/SupplierController.php';
-        $controller = new SupplierController($smarty);
-
-        if ($_GET['action'] ?? '' === 'store') {
-            $controller->store();
-        } elseif ($_GET['action'] ?? '' === 'delete') {
-            $controller->delete();
-        } else {
-            $controller->index();
-        }
-        break;
-
+    
     default:
-        $smarty->display('dashboard.tpl');
-        break;
+        echo "404 Not Found";
 }
