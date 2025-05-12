@@ -9,7 +9,7 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>#</th>
+                <th>No.</th>
                 <th>Nama Supplier</th>
                 <th>Kontak</th>
                 <th>Aksi</th>

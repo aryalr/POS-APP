@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.5, created on 2025-05-12 06:02:27
+/* Smarty version 4.5.5, created on 2025-05-12 07:41:40
   from '/opt/lampp/htdocs/POS-APP/app/views/templates/supplier/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.5',
-  'unifunc' => 'content_682172d3c773f4_96465658',
+  'unifunc' => 'content_68218a141690e7_74128627',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1767f06cdf01965026693f61e467d32f240c9795' => 
     array (
       0 => '/opt/lampp/htdocs/POS-APP/app/views/templates/supplier/index.tpl',
-      1 => 1747022543,
+      1 => 1747028497,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../footer.tpl' => 1,
   ),
 ),false)) {
-function content_682172d3c773f4_96465658 (Smarty_Internal_Template $_smarty_tpl) {
+function content_68218a141690e7_74128627 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/opt/lampp/htdocs/POS-APP/vendor/smarty/smarty/libs/plugins/modifier.count.php','function'=>'smarty_modifier_count',),));
 $_smarty_tpl->_subTemplateRender("file:../header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>"Manajemen Supplier"), 0, false);
 ?>
@@ -36,7 +36,7 @@ $_smarty_tpl->_subTemplateRender("file:../header.tpl", $_smarty_tpl->cache_id, $
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>#</th>
+                <th>No.</th>
                 <th>Nama Supplier</th>
                 <th>Kontak</th>
                 <th>Aksi</th>

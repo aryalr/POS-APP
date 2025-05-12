@@ -31,6 +31,12 @@ switch ($page) {
             case 'create' :
                 $controller->create();
                 break;
+            case 'store' :
+                $controller->store();
+                break;
+            case 'delete' :
+                $controller->delete();
+                break;
             default:
                 $controller->index();
                 break;
