@@ -5,44 +5,35 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use App\Controllers\SupplierController;
+use Smarty;
+use App\Database;
+
+session_start();
 
 // Inisialisasi Smarty
 $smarty = new Smarty();
-$smarty->setTemplateDir(__DIR__ . '/../app/views/templates/');
-$smarty->setCompileDir(__DIR__ . '/../app/views/templates_c/');
-$smarty->setCacheDir(__DIR__ . '/../app/views/cache/');
-$smarty->setConfigDir(__DIR__ . '/../app/views/configs/');
+$smarty->setTemplateDir(__DIR__ . '/../resources/views/');
+$smarty->setCompileDir(__DIR__ . '/../storage/smarty/compile/');
+$smarty->setCacheDir(__DIR__ . '/../storage/smarty/cache/');
 
-// Routing sederhana
+// Ambil routing
+$routes = require __DIR__ . '/../routes/web.php';
+
+// Ambil parameter dari URL
 $page = $_GET['page'] ?? 'supplier';
 $action = $_GET['action'] ?? 'index';
 
-switch ($page) {
-    case 'supplier':
-        $controller = new SupplierController($smarty);
-        switch ($action) {
-            case 'edit':
-                $controller->edit();
-                break;
-            case 'update':
-                $controller->update();
-                break;
-            case 'create' :
-                $controller->create();
-                break;
-            case 'store' :
-                $controller->store();
-                break;
-            case 'delete' :
-                $controller->delete();
-                break;
-            default:
-                $controller->index();
-                break;
-        }
-        break;
+// Cari controller berdasarkan route
+if (array_key_exists($page, $routes)) {
+    $controllerClass = $routes[$page];
+    $controller = new $controllerClass($smarty);
 
-    default:
-        echo "404 Not Found";
+    // Panggil method action-nya jika ada
+    if (method_exists($controller, $action)) {
+        $controller->$action();
+    } else {
+        echo "Action '$action' not found in controller '$page'";
+    }
+} else {
+    echo "Page '$page' not found.";
 }
