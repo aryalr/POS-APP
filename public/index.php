@@ -5,13 +5,13 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use Smarty;
+
 use App\Database;
 
 session_start();
 
 // Inisialisasi Smarty
-$smarty = new Smarty();
+$smarty = new \Smarty();
 $smarty->setTemplateDir(__DIR__ . '/../resources/views/');
 $smarty->setCompileDir(__DIR__ . '/../storage/smarty/compile/');
 $smarty->setCacheDir(__DIR__ . '/../storage/smarty/cache/');
