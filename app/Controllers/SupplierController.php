@@ -5,24 +5,29 @@ namespace App\Controllers;
 use App\Models\Supplier;
 use Smarty;
 
-class SupplierController {
+class SupplierController
+{
     protected $smarty;
 
-    public function __construct(Smarty $smarty) {
+    public function __construct(Smarty $smarty)
+    {
         $this->smarty = $smarty;
     }
 
-    public function index() {
+    public function index()
+    {
         $suppliers = Supplier::getAll();
         $this->smarty->assign('suppliers', $suppliers);
         $this->smarty->display('supplier/index.tpl');
     }
 
-    public function create() {
+    public function create()
+    {
         $this->smarty->display('supplier/create.tpl');
     }
 
-    public function store() {
+    public function store()
+    {
         $name = $_POST['supplier_name'] ?? '';
         $contact = $_POST['contact_info'] ?? '';
         if (!empty($name)) {
@@ -34,7 +39,8 @@ class SupplierController {
         }
     }
 
-    public function edit() {
+    public function edit()
+    {
         $id = $_GET['id'] ?? null;
         if ($id) {
             $supplier = Supplier::getById($id);
@@ -47,7 +53,8 @@ class SupplierController {
         echo "Data tidak ditemukan.";
     }
 
-    public function update() {
+    public function update()
+    {
         $id = $_POST['id_supplier'] ?? null;
         $name = $_POST['supplier_name'] ?? '';
         $contact = $_POST['contact_info'] ?? '';
@@ -61,7 +68,8 @@ class SupplierController {
         }
     }
 
-    public function delete() {
+    public function delete()
+    {
         $id = $_GET['id'] ?? null;
         if ($id) {
             Supplier::delete($id);
