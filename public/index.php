@@ -15,6 +15,7 @@ $smarty = new \Smarty();
 $smarty->setTemplateDir(__DIR__ . '/../resources/views/');
 $smarty->setCompileDir(__DIR__ . '/../storage/smarty/compile/');
 $smarty->setCacheDir(__DIR__ . '/../storage/smarty/cache/');
+$smarty->registerPlugin("modifier", "number_format", "number_format");
 
 // Ambil routing
 $routes = require __DIR__ . '/../routes/web.php';

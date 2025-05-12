@@ -24,18 +24,18 @@ class Product
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public static function insert($name, $price, $stock, $supplierId)
+    public static function insert($name, $purchasePrice, $sellingPrice, $stock, $supplierId)
     {
         $conn = Database::getInstance();
-        $stmt = $conn->prepare("INSERT INTO products (product_name, price, stock, id_supplier) VALUES (?, ?, ?, ?)");
-        return $stmt->execute([$name, $price, $stock, $supplierId]);
+        $stmt = $conn->prepare("INSERT INTO products (product_name, purchase_price, selling_price, stock, id_supplier) VALUES (?, ?, ?, ?, ?)");
+        return $stmt->execute([$name, $purchasePrice, $sellingPrice, $stock, $supplierId]);
     }
 
-    public static function update($id, $name, $price, $stock, $supplierId)
+    public static function update($id, $name, $purchasePrice, $sellingPrice, $stock, $supplierId)
     {
         $conn = Database::getInstance();
-        $stmt = $conn->prepare("UPDATE products SET product_name = ?, price = ?, stock = ?, id_supplier = ? WHERE id_product = ?");
-        return $stmt->execute([$name, $price, $stock, $supplierId, $id]);
+        $stmt = $conn->prepare("UPDATE products SET product_name = ?, purchase_price = ?, selling_price = ?, stock = ?, id_supplier = ? WHERE id_product = ?");
+        return $stmt->execute([$name, $purchasePrice, $sellingPrice, $stock, $supplierId, $id]);
     }
 
     public static function delete($id)
