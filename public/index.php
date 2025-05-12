@@ -21,13 +21,15 @@ $action = $_GET['action'] ?? 'index';
 switch ($page) {
     case 'supplier':
         $controller = new SupplierController($smarty);
-
         switch ($action) {
             case 'edit':
                 $controller->edit();
                 break;
             case 'update':
                 $controller->update();
+                break;
+            case 'create' :
+                $controller->create();
                 break;
             default:
                 $controller->index();

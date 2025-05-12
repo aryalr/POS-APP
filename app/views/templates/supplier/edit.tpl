@@ -1,4 +1,4 @@
-{include file="../partials/header.tpl"}
+{include file="../header.tpl"}
 
 <h2>Edit Supplier</h2>
 
@@ -21,4 +21,4 @@
     </div>
 </form>
 
-{include file="../partials/footer.tpl"}
+{include file="../footer.tpl"}
