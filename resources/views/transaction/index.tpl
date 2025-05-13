@@ -22,7 +22,7 @@
         <td>Rp {number_format($trx.total_amount, 0, ',', '.')}</td>
         <td>{$trx.username|default:'-'}</td>
         <td>
-          <a href="index.php?page=transaction_detail&id={$trx.id_sale}" class="btn btn-info btn-sm">Detail</a>
+          <a href="?page=transaction&action=detail&id={$trx.id_sale}" class="btn btn-info btn-sm">Detail</a>
         </td>
       </tr>
     {/foreach}

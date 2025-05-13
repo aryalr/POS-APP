@@ -22,7 +22,12 @@ class Sale
   public static function getById($id)
   {
     $conn = Database::getInstance();
-    $stmt = $conn->prepare("SELECT * FROM sales WHERE id_sale = ?");
+    $stmt = $conn->prepare("
+        SELECT s.id_sale, s.sale_date, s.total_amount, u.username
+        FROM sales s
+        LEFT JOIN users u ON s.id_user = u.id_user
+        WHERE s.id_sale = ?
+    ");
     $stmt->execute([$id]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }

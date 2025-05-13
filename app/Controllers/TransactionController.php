@@ -54,7 +54,7 @@ class TransactionController
     if ($id) {
       $sale = Sale::getById($id);
       $details = Sale::getDetails($id);
-      $this->smarty->assign('sale', $sale);
+      $this->smarty->assign('transaction', $sale);
       $this->smarty->assign('details', $details);
       $this->smarty->display('transaction/detail.tpl');
     }
