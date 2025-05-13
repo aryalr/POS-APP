@@ -1,4 +1,30 @@
-{include file="../header.tpl"}
+<?php
+/* Smarty version 4.5.5, created on 2025-05-13 15:19:10
+  from 'C:\xampp\htdocs\POS-APP\resources\views\product\create.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.5.5',
+  'unifunc' => 'content_682346ce744853_07022244',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '540ad7e8e04d56518120c61ea4a085ba45673fb4' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\POS-APP\\resources\\views\\product\\create.tpl',
+      1 => 1747141988,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:../header.tpl' => 1,
+    'file:../footer.tpl' => 1,
+  ),
+),false)) {
+function content_682346ce744853_07022244 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:../header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <div class="container mt-4">
   <div class="card shadow">
@@ -50,9 +76,18 @@
               <label for="id_supplier" class="form-label fw-bold">Supplier</label>
               <select class="form-select" id="id_supplier" name="id_supplier" required>
                 <option value="" selected disabled>Pilih supplier</option>
-                {foreach $suppliers as $supplier}
-                  <option value="{$supplier.id_supplier}">{$supplier.supplier_name}</option>
-                {/foreach}
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['suppliers']->value, 'supplier');
+$_smarty_tpl->tpl_vars['supplier']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['supplier']->value) {
+$_smarty_tpl->tpl_vars['supplier']->do_else = false;
+?>
+                  <option value="<?php echo $_smarty_tpl->tpl_vars['supplier']->value['id_supplier'];?>
+"><?php echo $_smarty_tpl->tpl_vars['supplier']->value['supplier_name'];?>
+</option>
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
               </select>
               <div class="invalid-feedback">Harap pilih supplier</div>
             </div>
@@ -72,7 +107,8 @@
   </div>
 </div>
 
-<script>
+<?php echo '<script'; ?>
+>
   // Bootstrap form validation
   (function() {
     'use strict';
@@ -101,6 +137,9 @@
       });
     }, false);
   })();
-</script>
+<?php echo '</script'; ?>
+>
 
-{include file="../footer.tpl"}
+<?php $_smarty_tpl->_subTemplateRender("file:../footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
+}
