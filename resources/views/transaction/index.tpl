@@ -5,9 +5,9 @@
 <a href="index.php?page=transaction_create" class="btn btn-primary mb-3">+ Transaksi Baru</a>
 
 <table class="table table-bordered table-striped">
-  <thead>
+  <thead class="table-dark">
     <tr>
-      <th>#</th>
+      <th>No.</th>
       <th>Tanggal</th>
       <th>Total</th>
       <th>Kasir</th>
