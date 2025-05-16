@@ -44,4 +44,11 @@ class Product
         $stmt = $conn->prepare("DELETE FROM products WHERE id_product = ?");
         return $stmt->execute([$id]);
     }
+    public static function find($id)
+    {
+        $conn = Database::getInstance();
+        $stmt = $conn->prepare("SELECT * FROM products WHERE id_product = ?");
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }

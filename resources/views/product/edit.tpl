@@ -7,7 +7,7 @@
       <h2 class="mb-0 fs-4">Edit Produk</h2>
     </div>
     <div class="card-body">
-      <form method="POST" action="index.php?page=product_update" class="needs-validation" novalidate>
+      <form method="POST" action="?page=product&action=update" class="needs-validation" novalidate>
         <input type="hidden" name="id_product" value="{$product.id_product}">
 
         <div class="row mb-3">

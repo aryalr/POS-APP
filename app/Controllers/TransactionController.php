@@ -31,18 +31,32 @@ class TransactionController
 
   public function store()
   {
-    $cart = $_POST['cart'] ?? [];
+    $productIds = $_POST['id_product'];  // array
+    $quantities = $_POST['quantity'];   // array
     $userId = 2; // hardcoded sementara
-    $total = 0;
 
-    foreach ($cart as $item) {
-      $total += $item['quantity'] * $item['price'];
+    $total = 0;
+    $details = [];
+
+    foreach ($productIds as $index => $productId) {
+      $product = Product::find($productId);
+      $price = $product['selling_price'];
+      $qty = $quantities[$index];
+      $subtotal = $price * $qty;
+
+      $total += $subtotal;
+
+      $details[] = [
+        'product_id' => $productId,
+        'quantity' => $qty,
+        'price' => $price,
+      ];
     }
 
     $saleId = Sale::insert($total, $userId);
 
-    foreach ($cart as $item) {
-      Sale::insertDetail($saleId, $item['id_product'], $item['quantity'], $item['price']);
+    foreach ($details as $item) {
+      Sale::insertDetail($saleId, $item['product_id'], $item['quantity'], $item['price']);
     }
 
     header('Location: index.php?page=transaction');

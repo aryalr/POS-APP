@@ -7,7 +7,7 @@
             <h2 class="mb-0 fs-4">Edit Supplier</h2>
         </div>
         <div class="card-body">
-            <form method="POST" action="index.php?page=supplier_update" class="needs-validation" novalidate>
+            <form method="POST" action="?page=supplier&action=update" class="needs-validation" novalidate>
                 <input type="hidden" name="id_supplier" value="{$supplier.id_supplier}">
 
                 <div class="row">

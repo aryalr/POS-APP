@@ -7,7 +7,7 @@
       <h2 class="mb-0 fs-4">Tambah Produk Baru</h2>
     </div>
     <div class="card-body">
-      <form method="POST" action="index.php?page=product_store" class="needs-validation" novalidate>
+      <form method="POST" action="?page=product&action=store" class="needs-validation" novalidate>
         <div class="row mb-3">
           <div class="col-md-6">
             <div class="form-group mb-3">

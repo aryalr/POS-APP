@@ -2,7 +2,7 @@
 
 <h2 class="mt-4">Daftar Transaksi</h2>
 
-<a href="index.php?page=transaction_create" class="btn btn-primary mb-3">+ Transaksi Baru</a>
+<a href="?page=transaction&action=create" class="btn btn-primary mb-3">+ Transaksi Baru</a>
 
 <table class="table table-bordered table-striped">
   <thead class="table-dark">
