@@ -32,11 +32,12 @@ class ProductController
     public function store()
     {
         $name = $_POST['product_name'];
-        $price = $_POST['price'];
+        $purchasePrice = $_POST['purchase_price'];
+        $sellingPrice = $_POST['selling_price'];
         $stock = $_POST['stock'];
         $supplierId = $_POST['id_supplier'];
 
-        Product::insert($name, $price, $stock, $supplierId);
+        Product::insert($name, $purchasePrice, $sellingPrice, $stock, $supplierId);
         header('Location: index.php?page=product');
     }
 
@@ -56,11 +57,12 @@ class ProductController
     {
         $id = $_POST['id_product'];
         $name = $_POST['product_name'];
-        $price = $_POST['price'];
+        $purchasePrice = $_POST['purchase_price'];
+        $sellingPrice = $_POST['selling_price'];
         $stock = $_POST['stock'];
         $supplierId = $_POST['id_supplier'];
 
-        Product::update($id, $name, $price, $stock, $supplierId);
+        Product::update($id, $name, $purchasePrice, $sellingPrice, $stock, $supplierId);
         header('Location: index.php?page=product');
     }
 

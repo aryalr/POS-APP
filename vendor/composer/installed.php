@@ -3,7 +3,7 @@
         'name' => 'spicysss/pos-app',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '0c23ad60729926753032cbe16af63106eecbf199',
+        'reference' => '6a2de8d6fee8a2d54a8488d0dbd6a45231ecb6de',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'spicysss/pos-app' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '0c23ad60729926753032cbe16af63106eecbf199',
+            'reference' => '6a2de8d6fee8a2d54a8488d0dbd6a45231ecb6de',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
