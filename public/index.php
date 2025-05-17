@@ -6,15 +6,15 @@ error_reporting(E_ALL);
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Smarty;
-use App\Database;
+// use App\Database;
 
 session_start();
 
 // Inisialisasi Smarty
 $smarty = new Smarty();
-$smarty->setTemplateDir(__DIR__ . '/../resources/views/');
-$smarty->setCompileDir(__DIR__ . '/../storage/smarty/compile/');
-$smarty->setCacheDir(__DIR__ . '/../storage/smarty/cache/');
+$smarty->setTemplateDir(__DIR__ . '/../app/views/templates/');
+$smarty->setCompileDir(__DIR__ . '/../app/views/templates_c/');
+$smarty->setCacheDir(__DIR__ . '/../views//cache/');
 
 // Ambil routing
 $routes = require __DIR__ . '/../routes/web.php';
