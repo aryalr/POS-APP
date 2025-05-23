@@ -7,9 +7,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 session_start();
 
-
-
-
 // Inisialisasi Smarty
 $smarty = new Smarty();
 $smarty->setTemplateDir(__DIR__ . '/../resources/views/');

@@ -30,4 +30,24 @@ class LaporanController
       $this->smarty->display('laporan/detail.tpl');
     }
   }
+
+  public function print()
+  {
+    $id = $_GET['id'] ?? null;
+    if ($id) {
+      $nota = Laporan::getSaleDetails($id);
+
+      // Hitung total penjualan
+      $total = 0;
+      foreach ($nota as $item) {
+        $total += $item['subtotal'];
+      }
+
+      $this->smarty->assign('nota', $nota);
+      $this->smarty->assign('total', $total); // kirim total ke template
+      $this->smarty->display('laporan/print.tpl');
+    } else {
+      echo "ID tidak ditemukan.";
+    }
+  }
 }

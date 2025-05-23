@@ -1,0 +1,21 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  /* You'll wrap your main content with this div */
+  flex: 1 0 auto;
+  /* This makes the content grow and push the footer down */
+}
+
+footer {
+  flex-shrink: 0;
+  /* Prevents the footer from shrinking */
+}
