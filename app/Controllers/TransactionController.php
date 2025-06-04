@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\Product;
 use App\Models\Sale;
 use Smarty;
+use App\Middleware\AuthMiddleware;
 
 class TransactionController
 {
@@ -12,6 +13,7 @@ class TransactionController
 
   public function __construct(Smarty $smarty)
   {
+    AuthMiddleware::handle();
     $this->smarty = $smarty;
   }
 

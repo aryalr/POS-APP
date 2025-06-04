@@ -19,6 +19,14 @@ $routes = require __DIR__ . '/../routes/web.php';
 $page = $_GET['page'] ?? 'supplier';
 $action = $_GET['action'] ?? 'index';
 
+// Halaman yang tidak perlu autentikasi (bebas middleware)
+$noAuthNeeded = ['login', 'logout'];
+
+// Jalankan middleware hanya jika halaman butuh proteksi
+if (!in_array($page, $noAuthNeeded)) {
+    \App\Middleware\AuthMiddleware::handle();
+}
+
 // Cari controller berdasarkan route
 if (array_key_exists($page, $routes)) {
     $controllerClass = $routes[$page];

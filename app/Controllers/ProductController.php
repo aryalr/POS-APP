@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\Product;
 use App\Models\Supplier;
 use Smarty;
+use App\Middleware\AuthMiddleware;
 
 class ProductController
 {
@@ -12,6 +13,7 @@ class ProductController
 
     public function __construct(Smarty $smarty)
     {
+        AuthMiddleware::handle();
         $this->smarty = $smarty;
     }
 

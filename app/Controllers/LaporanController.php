@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Laporan;
 use Smarty;
+use App\Middleware\AuthMiddleware;
 
 class LaporanController
 {
@@ -11,6 +12,7 @@ class LaporanController
 
   public function __construct(Smarty $smarty)
   {
+    AuthMiddleware::handle();
     $this->smarty = $smarty;
   }
 

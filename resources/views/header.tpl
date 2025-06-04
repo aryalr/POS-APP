@@ -42,6 +42,14 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="#"><i class="bi bi-cart-dash"></i> POS App</a>
+                <nav class="navbar navbar-dark bg-dark">
+                    <span class="navbar-text">
+                        {if isset($smarty.session.user)}
+                            Selamat datang, {$smarty.session.user.name|default:"admin"} | <a
+                                href="?page=logout&action=logout">Logout</a>
+                        {/if}
+                    </span>
+                </nav>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

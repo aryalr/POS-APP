@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Pastikan base path-nya benar, ganti /pos-app/public jika beda
+RewriteBase /pos-app/public/
+
+# Jika file atau folder ada, langsung akses
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Selain itu, arahkan ke index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
