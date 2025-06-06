@@ -41,7 +41,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#"><i class="bi bi-cart-dash"></i> POS App</a>
+                <a class="navbar-brand" href="/pos-app/public"><i class="bi bi-cart-dash"></i> POS App</a>
                 <nav class="navbar navbar-dark bg-dark">
                     <span class="navbar-text">
                         {if isset($smarty.session.user)}
