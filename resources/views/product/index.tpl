@@ -1,4 +1,4 @@
-{include file="../header.tpl"}
+{include file="../header.tpl" title="Manajemen Produk"}
 
 <div class="container mt-4">
   <div class="card shadow">

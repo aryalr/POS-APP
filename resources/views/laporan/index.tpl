@@ -1,4 +1,4 @@
-{include file="../header.tpl"}
+{include file="../header.tpl" title="Cetak Transaksi"}
 
 <div class="content-wrapper">
   <div class="container mt-4">

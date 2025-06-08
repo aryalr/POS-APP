@@ -1,7 +1,8 @@
 RewriteEngine On
 
-# Pastikan base path-nya benar, ganti /pos-app/public jika beda
-RewriteBase /pos-app/public/
+# Untuk virtual host, RewriteBase harus '/'
+# Karena DocumentRoot sudah mengarah ke folder public
+RewriteBase /
 
 # Jika file atau folder ada, langsung akses
 RewriteCond %{REQUEST_FILENAME} !-f
