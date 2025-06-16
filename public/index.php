@@ -13,7 +13,7 @@ $smarty->setTemplateDir(__DIR__ . '/../resources/views/');
 $smarty->setCompileDir(__DIR__ . '/../storage/smarty/compile/');
 $smarty->setCacheDir(__DIR__ . '/../storage/smarty/cache/');
 
-// registering number format untuk menghilangkan deprecated warning
+// Registering number format untuk menghilangkan deprecated warning
 $smarty->registerPlugin("modifier", "number_format", "number_format");
 
 // Ambil routing

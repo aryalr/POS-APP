@@ -56,7 +56,7 @@ class LaporanController
       // Contoh: URL ke detail transaksi di aplikasi Anda.
       // Ganti "http://pos-app.test/transaction-details?id=" dengan URL asli Anda.
       // Pastikan URL ini bisa diakses dari luar jika QR code akan di-scan oleh pelanggan.
-      $qr_data_content = "http://pos-app.test/transaction-details?id=" . $nota[0]['id_sale'];
+      $qr_data_content = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
       // Penting: URL encode data agar aman dalam URL QR code generator
       $qr_data_encoded = urlencode($qr_data_content);
