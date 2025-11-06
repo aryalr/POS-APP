@@ -1,5 +1,7 @@
 {
   "name": "spicysss/pos-app",
+  "description": "Semester 4 college project to learn web-apps",
+  "license": "MIT",
   "require": {
     "smarty/smarty": "^4.0"
   },
